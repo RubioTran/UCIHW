@@ -1,0 +1,19 @@
+div.header {
+  border: 1px solid black;
+}
+
+
+table, th, td {
+  margin-top: 50px;
+  border: 1px solid black;
+  padding: 5px;
+  font-size: 20px;
+
+}
+
+.form-control {
+  display: inline-block;
+  width: 200px;
+  margin-top: 50px;
+  }
+
