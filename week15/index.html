@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Belly Button Biodiversity</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        div.header {background-color: lightgrey;}
+        body {background-color: white;}
+        p, h1, h4, h5 {color: black;}
+        div.box {background-color: lightgrey;}
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid">                        
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="header" >
+                    <br>
+                    <h1><center><b>Belly Button Biodiversity<br>Dashboard</b></center></h1>
+                    <h5><center>Use the interactive charts below to explore the dataset</center></h5>
+                    <br>
+                </div> 
+            </div>
+        </div>              
+    </div>
+                
+    <div class="container-fluid">                        
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="box">
+                        <h4>Select Sample:</h4>
+                        <div>
+                            <select id="nameSelectSample" onchange="selectedOption(this.value)">
+                                {% for i in DF_list %}
+                                    <option value = {{ i }}>Choose sample</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-10">
+                <div id="pie"></div>
+                </div>
+            </div>             
+        </div>
+    
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
